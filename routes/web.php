@@ -30,3 +30,6 @@ Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
 Route::name('guest.')->group(function () {
     Route::get('/', [ GuestDashboardController::class , 'home'])->name('home');
 });
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
